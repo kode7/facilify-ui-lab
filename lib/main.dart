@@ -113,7 +113,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text('Responsive UI Lab'),
+      title: const Text('Facilify UI Lab'),
       centerTitle: false,
       backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       actions: _buildActions(context),
