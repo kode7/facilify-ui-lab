@@ -1,23 +1,20 @@
 #!/bin/bash
 
-# Define Flutter version and channel
+# Define the Flutter channel
 FLUTTER_CHANNEL="stable"
-FLUTTER_VERSION="2.10.3"
 
-# Download and unpack Flutter
-curl -L https://storage.googleapis.com/flutter_infra_release/releases/$FLUTTER_CHANNEL/linux/flutter_linux_$FLUTTER_VERSION-$FLUTTER_CHANNEL.tar.xz | tar Jxv
+# Automatically update to the latest Flutter version on the stable channel
+curl -L https://storage.googleapis.com/flutter_infra_release/releases/$FLUTTER_CHANNEL/linux/flutter_linux_latest-$FLUTTER_CHANNEL.tar.xz | tar Jxv
 export PATH="$PATH:`pwd`/flutter/bin"
 
-# Ensure fresh dependencies by cleaning the cache
-flutter pub cache repair
-
-# Run flutter doctor to confirm setup
+# Upgrade Flutter to the latest version and ensure dependencies are compatible
+flutter upgrade
 flutter doctor
 
-# Clean existing build files
+# Clean existing build files and Flutter package cache
 flutter clean
 
-# Fetch dependencies again
+# Fetch dependencies
 flutter pub get
 
 # Build Flutter web app
