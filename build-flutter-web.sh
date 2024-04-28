@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# Define the Flutter channel
-FLUTTER_CHANNEL="stable"
-
-# Automatically update to the latest Flutter version on the stable channel
-curl -L https://storage.googleapis.com/flutter_infra_release/releases/$FLUTTER_CHANNEL/linux/flutter_linux_latest-$FLUTTER_CHANNEL.tar.xz | tar Jxv
+# Install Flutter
+git clone https://github.com/flutter/flutter.git -b stable
 export PATH="$PATH:`pwd`/flutter/bin"
 
 # Upgrade Flutter to the latest version and ensure dependencies are compatible
