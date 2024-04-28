@@ -15,4 +15,4 @@ flutter clean
 flutter pub outdated
 
 # Build Flutter web app
-flutter build web
+flutter build web --release
