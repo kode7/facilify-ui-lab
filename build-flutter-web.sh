@@ -12,7 +12,7 @@ flutter doctor
 flutter clean
 
 # Fetch dependencies
-flutter pub get
+flutter pub outdated
 
 # Build Flutter web app
 flutter build web
